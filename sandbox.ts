@@ -1,45 +1,25 @@
-//explicit types
-let character: string;
-let age: number;
-let isLoggedIn: boolean;
+//Any type
 
-// age = "hello";
-age = 30;
+let age: any = 25;
 
-// isLoggedIn = 20;
-isLoggedIn = false;
+age = true;
+console.log(age);
+age = "hello";
+console.log(age);
+age = { name: "Haikal" };
+console.log(age);
 
-//arrays
-let persons: string[] = [];
+let mixed: any[] = [];
 
-// persons = [10, 23];
-persons = ["Haikal", "Azhar"];
-
-persons.push("Maya");
-
-//union types
-let mixed: (string | number | boolean)[] = [];
+mixed.push(5);
 mixed.push("Haikal");
-mixed.push(20);
 mixed.push(false);
 console.log(mixed);
 
-let uid: string | number;
-uid = "123";
-uid = 123;
-// uid = true;
+let ninja: { name: any; age: any };
 
-//objects
-let ninjaOne: object;
-ninjaOne = {
-  name: "Haikal",
-  age: 23,
-};
+ninja = { name: "Haikal", age: 25 };
+console.log(ninja);
 
-let ninjaTwo: {
-  name: string;
-  age: number;
-  beltColor: string;
-};
-
-ninjaTwo = { name: "Haikal", age: 20, beltColor: "black" };
+ninja = { name: 25, age: "Haikal" };
+console.log(ninja);
