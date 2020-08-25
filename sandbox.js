@@ -1,28 +1,31 @@
+//explicit types
+var character;
+var age;
+var isLoggedIn;
+// age = "hello";
+age = 30;
+// isLoggedIn = 20;
+isLoggedIn = false;
 //arrays
-var names = ["Haikal", "Maya", "Sabrina"];
-names.push("AZHAR");
-// names.push(23);
-// names[0] = 4;
-var numbers = [1, 2, 3, 4];
-numbers.push(25);
-// numbers.push("hello");
-// numbers[1] = "hello";
-var mixed = ["haikal", 4, "hello", 8, 9];
-mixed.push("Erysha");
-mixed.push(45);
-mixed[2] = "Azhar";
+var persons = [];
+// persons = [10, 23];
+persons = ["Haikal", "Azhar"];
+persons.push("Maya");
+//union types
+var mixed = [];
+mixed.push("Haikal");
+mixed.push(20);
+mixed.push(false);
+console.log(mixed);
+var uid;
+uid = "123";
+uid = 123;
+// uid = true;
 //objects
-var person = {
+var ninjaOne;
+ninjaOne = {
     name: "Haikal",
-    belt: "black",
     age: 23
 };
-person.age = 35;
-person.name = "Maya";
-// person.age = "30";
-// person.skills = ['fighting', 'sneaking'];
-person = {
-    name: "Maya",
-    belt: "white",
-    age: 40
-};
+var ninjaTwo;
+ninjaTwo = { name: "Haikal", age: 20, beltColor: "black" };

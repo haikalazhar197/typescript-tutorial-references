@@ -1,36 +1,45 @@
+//explicit types
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
+
+// age = "hello";
+age = 30;
+
+// isLoggedIn = 20;
+isLoggedIn = false;
+
 //arrays
-let names = ["Haikal", "Maya", "Sabrina"];
+let persons: string[] = [];
 
-names.push("AZHAR");
-// names.push(23);
-// names[0] = 4;
+// persons = [10, 23];
+persons = ["Haikal", "Azhar"];
 
-let numbers = [1, 2, 3, 4];
+persons.push("Maya");
 
-numbers.push(25);
-// numbers.push("hello");
-// numbers[1] = "hello";
+//union types
+let mixed: (string | number | boolean)[] = [];
+mixed.push("Haikal");
+mixed.push(20);
+mixed.push(false);
+console.log(mixed);
 
-let mixed = ["haikal", 4, "hello", 8, 9];
-mixed.push("Erysha");
-mixed.push(45);
-mixed[2] = "Azhar";
+let uid: string | number;
+uid = "123";
+uid = 123;
+// uid = true;
 
 //objects
-
-let person = {
+let ninjaOne: object;
+ninjaOne = {
   name: "Haikal",
-  belt: "black",
   age: 23,
 };
 
-person.age = 35;
-person.name = "Maya";
-// person.age = "30";
-// person.skills = ['fighting', 'sneaking'];
-
-person = {
-  name: "Maya",
-  belt: "white",
-  age: 40,
+let ninjaTwo: {
+  name: string;
+  age: number;
+  beltColor: string;
 };
+
+ninjaTwo = { name: "Haikal", age: 20, beltColor: "black" };
