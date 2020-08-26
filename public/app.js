@@ -23,3 +23,22 @@ form.addEventListener("submit", (e) => {
     // console.log(doc);
     list.render(doc, type.value, "end");
 });
+//GENERICSSS
+const addUID = (object) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, object), { uid });
+};
+let docOne = addUID({ name: "Haikal", age: 23 });
+// let docTow = addUID("STRING");
+console.log(docOne);
+const docThree = {
+    uid: 1,
+    resourceName: "Person",
+    data: { name: "Haikal" },
+};
+const docFour = {
+    uid: 2,
+    resourceName: "Shopping list",
+    data: ["bread", "milk", "toiler roll"],
+};
+console.log(docThree, docFour);
