@@ -4,7 +4,6 @@ import { HasFormatter } from "./Interfaces/HasFormatter.js";
 import { ListTemplate } from "./classes/ListTemplate.js";
 
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
-// console.log(form.children);
 
 // inputs
 const type = document.querySelector("#type") as HTMLSelectElement;
@@ -34,17 +33,3 @@ form.addEventListener("submit", (e: Event) => {
 
   list.render(doc, type.value, "end");
 });
-
-// Tuples
-
-let arr = ["Haikal", 2, true];
-arr[0] = false;
-arr[1] = "Haikal";
-arr = [30, false, "Haikal"];
-
-let tup: [string, number, boolean] = ["Haikal", 25, true];
-tup[0] = "Maya";
-tup[1] = 23;
-
-let student: [string, number];
-student = ["Azhar", 45];
