@@ -1,13 +1,34 @@
-// // that ! means that we know that is not going to be null
-// const anchor = document.querySelector("a")!;
+// classes
+class Invoice {
+  client: string;
+  details: string;
+  amount: number;
 
-// // if (anchor) {
-// //   console.log(anchor.href);
-// // }
+  constructor(c: string, d: string, a: number) {
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+  }
 
-// console.log(anchor.href);
+  format() {
+    return `${this.client} owes RM${this.amount} for ${details}`;
+  }
+}
 
-// const form = document.querySelector('form')!;
+const invOne = new Invoice("Sabrina", "Work on Something", 40);
+const invTwo = new Invoice("Maya", "Work on Something", 300);
+
+let invoices: Invoice[] = [];
+
+invoices.push(invOne);
+invoices.push(invTwo);
+
+invOne.client = "Haikal";
+invTwo.amount = 200;
+
+console.log(invOne, invTwo);
+
+console.log(invoices);
 
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
 // console.log(form.children);

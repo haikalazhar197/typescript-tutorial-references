@@ -1,11 +1,25 @@
 "use strict";
-// // that ! means that we know that is not going to be null
-// const anchor = document.querySelector("a")!;
-// // if (anchor) {
-// //   console.log(anchor.href);
-// // }
-// console.log(anchor.href);
-// const form = document.querySelector('form')!;
+// classes
+var Invoice = /** @class */ (function () {
+    function Invoice(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    Invoice.prototype.format = function () {
+        return this.client + " owes RM" + this.amount + " for " + details;
+    };
+    return Invoice;
+}());
+var invOne = new Invoice("Sabrina", "Work on Something", 40);
+var invTwo = new Invoice("Maya", "Work on Something", 300);
+var invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+invOne.client = "Haikal";
+invTwo.amount = 200;
+console.log(invOne, invTwo);
+console.log(invoices);
 var form = document.querySelector(".new-item-form");
 // console.log(form.children);
 // inputs
