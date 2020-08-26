@@ -19,12 +19,15 @@ const list = new ListTemplate(ul);
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
+  let values: [string, string, number];
+  values = [toFrom.value, details.value, amount.valueAsNumber];
+
   let doc: HasFormatter;
 
   if (type.value === "invoice") {
-    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
-    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
 
   // console.log(doc);
@@ -32,31 +35,16 @@ form.addEventListener("submit", (e: Event) => {
   list.render(doc, type.value, "end");
 });
 
-// Enums
-enum ResourceType {
-  BOOK,
-  AUTHOR,
-  FILM,
-  DIRECTOR,
-  PERSON,
-}
+// Tuples
 
-interface Resources<T> {
-  uid: number;
-  resourceType: ResourceType;
-  data: T;
-}
+let arr = ["Haikal", 2, true];
+arr[0] = false;
+arr[1] = "Haikal";
+arr = [30, false, "Haikal"];
 
-const docThree: Resources<object> = {
-  uid: 1,
-  resourceType: ResourceType.BOOK,
-  data: { name: "Haikal" },
-};
+let tup: [string, number, boolean] = ["Haikal", 25, true];
+tup[0] = "Maya";
+tup[1] = 23;
 
-const docFour: Resources<string[]> = {
-  uid: 2,
-  resourceType: ResourceType.PERSON,
-  data: ["bread", "milk", "toiler roll"],
-};
-
-console.log(docThree, docFour);
+let student: [string, number];
+student = ["Azhar", 45];
