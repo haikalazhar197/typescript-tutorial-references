@@ -23,22 +23,23 @@ form.addEventListener("submit", (e) => {
     // console.log(doc);
     list.render(doc, type.value, "end");
 });
-//GENERICSSS
-const addUID = (object) => {
-    let uid = Math.floor(Math.random() * 100);
-    return Object.assign(Object.assign({}, object), { uid });
-};
-let docOne = addUID({ name: "Haikal", age: 23 });
-// let docTow = addUID("STRING");
-console.log(docOne);
+// Enums
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
 const docThree = {
     uid: 1,
-    resourceName: "Person",
+    resourceType: ResourceType.BOOK,
     data: { name: "Haikal" },
 };
 const docFour = {
     uid: 2,
-    resourceName: "Shopping list",
+    resourceType: ResourceType.PERSON,
     data: ["bread", "milk", "toiler roll"],
 };
 console.log(docThree, docFour);
